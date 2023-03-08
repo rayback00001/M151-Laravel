@@ -10,21 +10,19 @@
 
 <body>
 
-    <form method="POST" action="">
+    <form method="POST" action="?">
+        @csrf
+
+        <div>
+            <input type="text" name="firstname" placeholder="Vorname"><br>
+        </div>
+
+        <div>
+            <input type="text" name="lastname" placeholder="Name"><br>
+        </div>
 
         <div>
             <input type="email" name="email" placeholder="Email"><br>
-        </div>
-
-        <div>
-            <input type="text" name="last_name" placeholder="Name"><br>
-        </div>
-
-        <div>
-            <input type="text" name="first_name" placeholder="Vorname"><br>
-        </div>
-        <div>
-            <textarea name="message" placeholder="Schreiben Sie eine Nachricht"></textarea>
         </div>
 
         <button type="submit">Speichern</button>
