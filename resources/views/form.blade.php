@@ -25,9 +25,37 @@
             <input type="email" name="email" placeholder="Email"><br>
         </div>
 
-        <button type="submit">Speichern</button>
+        <div>
+            <button type="submit">Speichern</button>
+        </div>
+        
 
     </form>
+
+
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        input{
+          height: 30px;
+        }
+
+        button {
+          width: 150px;
+          height: 35px;
+          border: none;
+          border-radius: 50px;
+          margin: 10px 5px;
+          padding: 9px;
+          color: white;
+          background-color: #006ed5;
+          cursor: pointer;
+        }
+    </style>
 
 
 
