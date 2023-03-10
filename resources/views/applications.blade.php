@@ -11,9 +11,13 @@
 <body>
 
     <div>
-        @foreach($applications as $applications)
-        <p>{{$applications->firstname}} {{$applications->lastname}}</p>
-        @endforeach
+        <ul>
+            @foreach($applications as $applications)
+            <li>{{$applications->firstname}} {{$applications->lastname}}</li>
+            @endforeach
+        </ul>
+
+        <small>{{$declinedApplications}} Abmeldungen</small>
 
     </div>
 
@@ -21,6 +25,10 @@
 
 
     <style>
+
+        *{
+            list-style: none;
+        }
         div{
             display: flex;
             justify-content: center;
