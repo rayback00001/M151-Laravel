@@ -10,10 +10,19 @@
 
 <body>
 
+
+    <div class="event-details">
+        <h1>{{$event->title}}</h1><br>
+        <p>{{$event->description}}</p>
+        <p>Datum: {{$event->date}}</p>
+    </div>
+
     <div class="top">
         <h1>Anmeldung Events</h1>
         <p>Melden Sie sich für ein Event an</p>
     </div>
+
+    
 
 
     <form method="POST" action="?">
@@ -51,12 +60,16 @@
 
     </form>
 
+    <a href="/event/applications">Anmeldungen ansehen</a>
+
 
     <style>
         * {
             padding: 0;
             font-family: "Poppins", sans-serif;
             margin: 0;
+            list-style: none;
+            text-decoration: none;
         }
 
         .radio-btn {
@@ -70,6 +83,14 @@
             align-items: center;
             margin-right: 20px;
             margin-left: 30px;
+        }
+
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #006ed5;
+            padding-top: 8px;
         }
 
 
@@ -101,6 +122,13 @@
             background-color: #006ed5;
             cursor: pointer;
         }
+
+        .event-details{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
 
     </style>
 

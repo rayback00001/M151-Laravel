@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\EventController;
 use App\Models\Application;
 use Illuminate\Support\Facades\Route;
 
@@ -14,34 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('form');
-});
+Route::get('/', [EventController::class, 'list']);
 
-Route::post('/', function () {
-    $request = request();
+Route::get('/event/{id}', [EventController::class, 'show']);
 
-    $application = new \App\Models\Application();
-    $application->answer = $request->get('answer');
-    $application->firstname = $request->get('firstname');
-    $application->lastname = $request->get('lastname');
-    $application->email = $request->get('email');
-    $application->session_id = session()->getId();
-    $application->save();
-
-    return redirect('/');
-
-});
-
-Route::get('/applications', function(){
-    $applications = \App\Models\Application::where('answer', 'yes')->get();
-
-    $declinedApplications = \App\Models\Application::where('answer', 'no') ->count();
-
-    return view('applications', [
-        
-        'applications' => $applications,
-        'declinedApplications' => $declinedApplications
-        
-    ]);
-});
+Route::post('/event', [ApplicationController::class, 'create']);
+Route::get('/applications', [ApplicationController::class, 'list']);
