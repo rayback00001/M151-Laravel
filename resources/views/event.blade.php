@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event</title>
+    <title>Events</title>
 </head>
 
 <body>
@@ -54,14 +54,14 @@
         </div>
 
         <div>
-            <button type="submit">Speichern</button>
+            <button type="submit">Absenden</button>
         </div>
 
 
     </form>
 
-    <a href="/event/applications">Anmeldungen ansehen</a>
-
+    <a href="{{$id}}/applications">Anmeldungen ansehen</a>
+    
 
     <style>
         * {
@@ -107,8 +107,9 @@
             flex-direction: column;
         }
 
-        input {
+        input[type=text], [type=email]  {
             height: 30px;
+            width: 280px;
         }
 
         button {

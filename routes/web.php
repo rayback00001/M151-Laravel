@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\EventController;
-use App\Models\Application;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [EventController::class, 'list']);
-
 Route::get('/event/{id}', [EventController::class, 'show']);
-
-Route::post('/event', [ApplicationController::class, 'create']);
-Route::get('/applications', [ApplicationController::class, 'list']);
+Route::post('/event/{id}', [ApplicationController::class, 'create']);
+Route::get('/event/{id}/applications', [ApplicationController::class, 'list']);

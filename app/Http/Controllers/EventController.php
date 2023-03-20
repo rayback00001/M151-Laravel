@@ -11,10 +11,11 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($id);
         return view('event', [
-            'event' => $event
+            'event' => $event,
+            'id' => $id
         ]);
     }
-
+    
     public function list()
     {
         $events = Event::all();

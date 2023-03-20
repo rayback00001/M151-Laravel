@@ -7,30 +7,32 @@ use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
-    public function create()
-    {
-        $request = request();
+     public function create($id)
+     {
+         $request = request();
+         
+         $application = new Application();
+         $application->answer = $request->get('answer');
+         $application->firstname = $request->get('firstname');
+         $application->lastname = $request->get('lastname');
+         $application->email = $request->get('email');
+         $application->session_id = session()->getId();
+         $application->event_id = $id;
+         $application->save();
 
-        $application = new Application();
-        $application->answer = $request->get('answer');
-        $application->firstname = $request->get('firstname');
-        $application->lastname = $request->get('lastname');
-        $application->email = $request->get('email');
-        $application->session_id = session()->getId();
-        $application->save();
-    
-        return redirect('/event');
-    }
+         return redirect('/event/' . $id);
+     }
 
-    public function list(){
-        $applications = Application::where('answer', 'yes')->get();
+    public function list($id){
+        
+        $applications = Application::where('event_id', $id)->where('answer', 'yes')->get();
 
-        $declinedApplications = Application::where('answer', 'no') ->count();
+        $declinedApplications = Application::where('event_id', $id)->where('answer', 'no')->count();
 
         return view('applications', [
-        
+            'eventId' => $id,
             'applications' => $applications,
-            'declinedApplications' => $declinedApplications
+            'declinedApplications' => $declinedApplications,
         
         ]);
     }

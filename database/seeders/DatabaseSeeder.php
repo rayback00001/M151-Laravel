@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
     {
 
         Event::truncate();
-        Application::truncate();
-       
         Event::factory()->count(50)->create();
+        
+        Application::truncate();
         Application::factory()->count(500)->create();
 
         /*
