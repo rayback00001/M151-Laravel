@@ -37,20 +37,21 @@
                 <input type="radio" value="no" id="no" name="answer" />
                 <label for="no" class="radio">Nein, ich kann leider nicht</label>
             </div>
-
-        </div>
-
-
-        <div>
-            <input type="text" name="firstname" placeholder="Vorname"><br>
         </div>
 
         <div>
-            <input type="text" name="lastname" placeholder="Name"><br>
+            <input type="text" name="firstname" placeholder="Vorname" value="{{old('firstname')}}"><br>
+            <span class="text-danger">@error('firstname'){{$message}}@enderror</span>
         </div>
 
         <div>
-            <input type="email" name="email" placeholder="Email"><br>
+            <input type="text" name="lastname" placeholder="Name" value="{{old('lastname')}}"><br>
+            <span class="text-danger">@error('lastname'){{$message}}@enderror</span>
+        </div>
+
+        <div>
+            <input type="email" name="email" placeholder="Email" value="{{old('email')}}"><br>
+            <span class="text-danger">@error('email'){{$message}}@enderror</span>
         </div>
 
         <div>
