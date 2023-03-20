@@ -5,15 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event</title>
+    <title>Events</title>
 </head>
 
 <body>
+
+
+    <div class="event-details">
+        <h1>{{$event->title}}</h1><br>
+        <p>{{$event->description}}</p>
+        <p>Datum: {{$event->date}}</p>
+    </div>
 
     <div class="top">
         <h1>Anmeldung Events</h1>
         <p>Melden Sie sich für ein Event an</p>
     </div>
+
+    
 
 
     <form method="POST" action="?">
@@ -45,18 +54,22 @@
         </div>
 
         <div>
-            <button type="submit">Speichern</button>
+            <button type="submit">Absenden</button>
         </div>
 
 
     </form>
 
+    <a href="{{$id}}/applications">Anmeldungen ansehen</a>
+    
 
     <style>
         * {
             padding: 0;
             font-family: "Poppins", sans-serif;
             margin: 0;
+            list-style: none;
+            text-decoration: none;
         }
 
         .radio-btn {
@@ -70,6 +83,14 @@
             align-items: center;
             margin-right: 20px;
             margin-left: 30px;
+        }
+
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #006ed5;
+            padding-top: 8px;
         }
 
 
@@ -86,8 +107,9 @@
             flex-direction: column;
         }
 
-        input {
+        input[type=text], [type=email]  {
             height: 30px;
+            width: 280px;
         }
 
         button {
@@ -101,6 +123,13 @@
             background-color: #006ed5;
             cursor: pointer;
         }
+
+        .event-details{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
 
     </style>
 

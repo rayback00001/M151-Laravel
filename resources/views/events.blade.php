@@ -10,22 +10,19 @@
 
 <body>
 
-    <div>
+    <div class="events">
+        <h1>Alle Events</h1>
         <ul>
-            @foreach($applications as $application)
-            <li>{{$application->firstname}} {{$application->lastname}}</li>
+            @foreach($events as $event)
+            <li><a href="/event/{{$event -> id}}">{{$event -> title}}</a></li>
             @endforeach
         </ul>
-
-        <small>{{$declinedApplications}} Abmeldungen</small>
 
     </div>
 
 
 
-
     <style>
-
         * {
             padding: 0;
             font-family: "Poppins", sans-serif;
@@ -33,13 +30,15 @@
             list-style: none;
             text-decoration: none;
         }
-        div{
+
+        .events{
             display: flex;
-            justify-content: center;
             align-items: center;
-            margin-top: 20px;
-            flex-direction: column;
+            flex-direction: column; 
+            text-align: center;
+            padding-top: 40px;
         }
+
 
     </style>
 </body>
