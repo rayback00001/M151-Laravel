@@ -9,8 +9,25 @@ class ApplicationController extends Controller
 {
      public function create($id)
      {
+
+        request()->validate([
+            'firstname'=>'required|max:100',
+            'lastname'=>'required|max:100',
+            'email'=>'required|email|',
+            'answer'=> 'required'
+          ],
+
+          [
+            'firstname.required'=>'Vorname eingeben!', 
+            'lastname.required'=>'Nachname eingeben!',
+            'email.required'=>'Email eingeben!',
+            'answer.required'=> 'Antwort eingeben!', 
+          
+        ]);
+
+
          $request = request();
-         
+
          $application = new Application();
          $application->answer = $request->get('answer');
          $application->firstname = $request->get('firstname');
