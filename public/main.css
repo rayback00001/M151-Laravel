@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Event view */
+
+.radio-btn {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+.choice{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 30px;
+}
+
+a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #006ed5;
+    padding-top: 8px;
+}
+
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+span{
+    color: red;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+
+input[type=text], [type=email]  {
+    height: 35px;
+    width: 280px;
+    outline: none;
+}
+
+button {
+    width: 150px;
+    height: 35px;
+    border: none;
+    border-radius: 50px;
+    margin: 10px 5px;
+    padding: 9px;
+    color: white;
+    background-color: #006ed5;
+    cursor: pointer;
+}
+
+button:hover{
+    scale: 1.05;
+}
+
+.event-details{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.success-msg{
+    background-color: green;
+    color: white;
+}
+
+/* Application view */
+
+.application {
+    margin: 20px;
+    padding: 20px;
+    background-color: #AEAEAE;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.application ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    
+}
+
+.application a{
+    text-decoration: none;
+    text-align: center;
+    width: 100px;
+    height: 23px;
+    border: none;
+    border-radius: 50px;
+    margin: 10px 5px;
+    padding: 9px;
+    color: white;
+    background-color: #006ed5;
+    cursor: pointer;
+}
+
+.application a:hover{
+    scale: 1.05;
+}
+
+.application li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.application small {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+
+.events{
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    text-align: center;
+    padding-top: 40px;
+}
+
+.events li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
