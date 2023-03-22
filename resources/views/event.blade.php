@@ -54,5 +54,11 @@
 
 <a href="{{$id}}/applications">Anmeldungen ansehen</a>
 
+    @if(session()->get('success'))
+    <div class="success-msg">
+        <p>{{session('success')}}</p>
+    </div>
+    @endif
 
 @endsection
+

@@ -6,7 +6,7 @@
     <h1>Alle Events</h1>
     <ul>
         @foreach($events as $event)
-        <li><a href="/event/{{$event -> id}}">{{$event -> title}}</a></li>
+        <li><a href="/event/{{$event -> id}}">{{$event -> title}}</a>({{$event->applications->count()}})</li>
         @endforeach
     </ul>
 </div>

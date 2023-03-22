@@ -53,8 +53,9 @@ span{
 
 
 input[type=text], [type=email]  {
-    height: 30px;
+    height: 35px;
     width: 280px;
+    outline: none;
 }
 
 button {
@@ -77,6 +78,11 @@ button:hover{
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.success-msg{
+    background-color: green;
+    color: white;
 }
 
 /* Application view */
@@ -137,5 +143,12 @@ button:hover{
     flex-direction: column; 
     text-align: center;
     padding-top: 40px;
+}
+
+.events li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
