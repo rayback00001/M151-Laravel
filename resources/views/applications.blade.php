@@ -21,11 +21,14 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         ul {
             list-style: none;
             padding: 0;
+            text-align: center;
         }
 
         li {
