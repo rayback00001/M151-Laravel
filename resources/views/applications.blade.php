@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: #f2f2f2;
+            
         }
 
         div {
@@ -21,11 +22,33 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         ul {
             list-style: none;
             padding: 0;
+            text-align: center;
+            
+        }
+
+        a{
+            text-decoration: none;
+            text-align: center;
+            width: 100px;
+            height: 23px;
+            border: none;
+            border-radius: 50px;
+            margin: 10px 5px;
+            padding: 9px;
+            color: white;
+            background-color: #006ed5;
+            cursor: pointer;
+        }
+
+        a:hover{
+            scale: 1.05;
         }
 
         li {
@@ -53,6 +76,7 @@
             @endforeach
         </ul>
         <small>{{$declinedApplications}} Abmeldungen</small>
+        <a href="{{url()->previous()}}">Zurück</a>
     </div>
 </body>
 </html>
