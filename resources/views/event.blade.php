@@ -18,8 +18,8 @@
     </div>
 
     <div class="top">
-        <h1>Anmeldung Events</h1>
-        <p>Melden Sie sich für ein Event an</p>
+        <h1>Anmeldung Event</h1>
+        <p>Melden Sie sich für diesen Event an</p>
     </div>
 
     
@@ -40,18 +40,18 @@
         </div>
 
         <div>
-            <input type="text" name="firstname" placeholder="Vorname" value="{{old('firstname')}}"><br>
             <span class="text-danger">@error('firstname'){{$message}}@enderror</span>
+            <input type="text" name="firstname" placeholder="Vorname" value="{{old('firstname')}}"><br>  
         </div>
 
         <div>
-            <input type="text" name="lastname" placeholder="Name" value="{{old('lastname')}}"><br>
             <span class="text-danger">@error('lastname'){{$message}}@enderror</span>
+            <input type="text" name="lastname" placeholder="Name" value="{{old('lastname')}}"><br>
         </div>
 
         <div>
-            <input type="email" name="email" placeholder="Email" value="{{old('email')}}"><br>
             <span class="text-danger">@error('email'){{$message}}@enderror</span>
+            <input type="email" name="email" placeholder="Email" value="{{old('email')}}"><br>
         </div>
 
         <div>
@@ -76,6 +76,7 @@
         .radio-btn {
             display: flex;
             align-items: center;
+            flex-direction: row;
             
         }
 
@@ -99,14 +100,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 10px;
+            flex-direction: column;
+        }
+
+        span{
+            color: red;
         }
 
         .top {
             display: flex;
             align-items: center;
             flex-direction: column;
+            padding-bottom: 20px;
+            padding-top: 20px;
         }
+
 
         input[type=text], [type=email]  {
             height: 30px;
@@ -123,6 +132,10 @@
             color: white;
             background-color: #006ed5;
             cursor: pointer;
+        }
+
+        button:hover{
+            scale: 1.05;
         }
 
         .event-details{
