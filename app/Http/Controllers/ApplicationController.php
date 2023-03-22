@@ -7,41 +7,43 @@ use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
-     public function create($id)
-     {
+    public function create($id)
+    {
 
-        request()->validate([
-            'firstname'=>'required|max:100',
-            'lastname'=>'required|max:100',
-            'email'=>'required|email|',
-            'answer'=> 'required'
-          ],
+        request()->validate(
+            [
+                'firstname' => 'required|max:100',
+                'lastname' => 'required|max:100',
+                'email' => 'required|email|',
+                'answer' => 'required'
+            ],
 
-          [
-            'firstname.required'=>'Vorname eingeben!', 
-            'lastname.required'=>'Nachname eingeben!',
-            'email.required'=>'Email eingeben!',
-            'answer.required'=> 'Antwort eingeben!', 
-          
-        ]);
+            [
+                'firstname.required' => 'Vorname eingeben!',
+                'lastname.required' => 'Nachname eingeben!',
+                'email.required' => 'Email eingeben!',
+                'answer.required' => 'Antwort eingeben!',
+            ]
+        );
 
 
-         $request = request();
+        $request = request();
 
-         $application = new Application();
-         $application->answer = $request->get('answer');
-         $application->firstname = $request->get('firstname');
-         $application->lastname = $request->get('lastname');
-         $application->email = $request->get('email');
-         $application->session_id = session()->getId();
-         $application->event_id = $id;
-         $application->save();
+        $application = new Application();
+        $application->answer = $request->get('answer');
+        $application->firstname = $request->get('firstname');
+        $application->lastname = $request->get('lastname');
+        $application->email = $request->get('email');
+        $application->session_id = session()->getId();
+        $application->event_id = $id;
+        $application->save();
 
-         return redirect('/event/' . $id);
-     }
+        return redirect('/event/' . $id);
+    }
 
-    public function list($id){
-        
+    public function list($id)
+    {
+
         $applications = Application::where('event_id', $id)->where('answer', 'yes')->get();
 
         $declinedApplications = Application::where('event_id', $id)->where('answer', 'no')->count();
@@ -50,9 +52,7 @@ class ApplicationController extends Controller
             'eventId' => $id,
             'applications' => $applications,
             'declinedApplications' => $declinedApplications,
-        
+
         ]);
     }
 }
-
-
