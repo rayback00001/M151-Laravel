@@ -9,6 +9,17 @@
 </head>
 <body>
 
+    <header>
+        <h2>Mein Eventportal</h2>
+        <ul class="navbar">
+            <li><a href="/">Alle Events</a></li>
+        </ul>
+
+        <div class="main">
+            <a href="/login"><button class="buttonlogin">Login</button></a>
+        </div>
+    </header>
+
     @yield('content')
 
 </body>
