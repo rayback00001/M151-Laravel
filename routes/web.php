@@ -22,16 +22,24 @@ Route::get('/event/{id}', [EventController::class, 'show']);
 Route::post('/event/{id}', [ApplicationController::class, 'create']);
 Route::get('/event/{id}/applications', [ApplicationController::class, 'list']);
 
-
-
 Route::get('/create', function () {
     return view('eventcreate');
-});
+})->middleware('admin');
 
-Route::post('/create', [EventController::class, 'create']);
+Route::post('/create', [EventController::class, 'create'])->middleware('admin');
 
 Route::get('/login', function () {
     return view('login');
-});
+})->middleware('guest')->name('login-user');
+
+Route::post('/login', [UserController::class, 'login'])->middleware('guest');
+
+Route::get('/register', function () {
+    return view('register');
+})->middleware('guest')->name('register-user');
+
+Route::post('/register', [UserController::class, 'create'])->middleware('guest');
+
+Route::get('/logout', [UserController::class, 'logout']);
 
 

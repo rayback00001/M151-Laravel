@@ -1,19 +1,23 @@
 @extends('layouts.master')
-@section('title', 'Login')
+@section('title', 'Register')
 @section('content')
 
 <div class="top">
-    <h1>Einloggen</h1>
+    <h1>Registrieren</h1>
 </div>
 
 <div class="login">
-    <div class="alert-danger">{{Session::get('fail')}}</div>
-    <form method="POST" action="{{route('login-user')}}">
+    <form method="POST" action="{{route('register-user')}}">
         @csrf
 
         <div>
+            <span class="text-danger">@error('name'){{$message}}@enderror</span>
+            <input type="text" name="name" placeholder="Name" value="{{old('name')}}"><br>
+        </div>
+
+        <div>
             <span class="text-danger">@error('email'){{$message}}@enderror</span>
-            <input type="email" name="email" placeholder="Name" value="{{old('email')}}"><br>
+            <input type="email" name="email" placeholder="Email" value="{{old('email')}}"><br>
         </div>
 
         <div>
@@ -22,7 +26,7 @@
         </div>
 
         <div>
-            <button type="submit">Login</button>
+            <button type="submit">Registrieren</button>
         </div>
 
     </form>
