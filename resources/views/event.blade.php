@@ -10,7 +10,6 @@
 
 <div class="top">
     <h1>Anmeldung Event</h1>
-    <p>Melden Sie sich für diesen Event an</p>
 </div>
 
 
