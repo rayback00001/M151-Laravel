@@ -15,9 +15,18 @@
             <li><a href="/">Alle Events</a></li>
         </ul>
 
+        @auth
+            <div class="main">
+                <a href="/logout"><button class="buttonlogin">Logout</button></a>
+            </div>
+        @endauth
+
+        @guest
         <div class="main">
-            <a href="/login"><button class="buttonlogin">Login</button></a>
+            <a href="/login">Login</a>
+            <a href="/register"><button class="buttonlogin">Register</button></a>
         </div>
+        @endguest
     </header>
 
     @yield('content')
