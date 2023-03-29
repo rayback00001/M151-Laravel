@@ -13,7 +13,7 @@
 
         <div>
             <span class="text-danger">@error('email'){{$message}}@enderror</span>
-            <input type="email" name="email" placeholder="Name" value="{{old('email')}}"><br>
+            <input type="email" name="email" placeholder="Email" value="{{old('email')}}"><br>
         </div>
 
         <div>
