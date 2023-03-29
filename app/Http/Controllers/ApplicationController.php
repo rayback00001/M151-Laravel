@@ -11,7 +11,7 @@ class ApplicationController extends Controller
     public function create($id)
     {
 
-        request()->validate(
+        $attributes = request()->validate(
             [
                 'firstname' => 'required|max:100',
                 'lastname' => 'required|max:100',
@@ -23,18 +23,12 @@ class ApplicationController extends Controller
                 'firstname.required' => 'Vorname eingeben!',
                 'lastname.required' => 'Nachname eingeben!',
                 'email.required' => 'Email eingeben!',
-                'answer.required' => 'Antwort eingeben!',
             ]
         );
 
 
-        $request = request();
-
         $application = new Application();
-        $application->answer = $request->get('answer');
-        $application->firstname = $request->get('firstname');
-        $application->lastname = $request->get('lastname');
-        $application->email = $request->get('email');
+        $application->fill($attributes);
         $application->session_id = session()->getId();
         $application->event_id = $id;
         $application->save();

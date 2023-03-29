@@ -20,7 +20,7 @@
     <div>
         <span class="text-danger">@error('description'){{$message}}@enderror</span>
         <label for="description">Beschreibung</label>
-        <textarea name="description"></textarea>
+        <textarea name="description">{{old('description')}}</textarea>
     </div>
 
     <div>

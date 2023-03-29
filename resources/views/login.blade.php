@@ -7,7 +7,7 @@
 </div>
 
 <div class="login">
-    <div class="alert-danger">{{Session::get('fail')}}</div>
+    <span class="text-danger">{{Session::get('fail')}}</span>
     <form method="POST" action="{{route('login-user')}}">
         @csrf
 

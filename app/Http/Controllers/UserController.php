@@ -13,15 +13,16 @@ class UserController extends Controller
         $data = request()->validate(
         [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:6'
         ],
     
         [
             'name.required' => 'Name eingeben!',
             'email.required' => 'Email eingeben!',
-            'password.required' => 'Passwort eingeben!'
-
+            'email.unique' => 'Email ist schon vergeben!',
+            'password.required' => 'Passwort eingeben!',
+            'password.min' => 'Passwort muss mindestens 6 Zeichen haben!'
         ]
     
     );
@@ -48,6 +49,9 @@ class UserController extends Controller
 
         if(auth()->attempt($attributes)){
             return redirect('/');
+        }
+        else{
+            return back()->with('fail', 'Diese Email wurde nicht registriert');
         }
     }
 
