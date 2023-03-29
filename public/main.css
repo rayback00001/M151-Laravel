@@ -157,6 +157,12 @@ button:hover{
     flex-direction: column;
 }
 
+.event-details p{
+    max-width: 450px;
+    text-align: center;
+    padding-bottom: 9px;
+}
+
 .success-msg{
     background-color: green;
     color: white;
