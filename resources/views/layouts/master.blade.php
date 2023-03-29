@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link rel="stylesheet" type="text/css" href="{{asset('main.css')}}" >
+    <link rel="stylesheet" type="text/css" href="{{asset('main.css')}}">
 </head>
+
 <body>
 
     <header>
@@ -16,9 +18,9 @@
         </ul>
 
         @auth
-            <div class="main">
-                <a href="/logout"><button class="buttonlogin">Logout</button></a>
-            </div>
+        <div class="main">
+            <a href="/logout"><button class="buttonlogin">Logout</button></a>
+        </div>
         @endauth
 
         @guest
@@ -32,4 +34,5 @@
     @yield('content')
 
 </body>
+
 </html>

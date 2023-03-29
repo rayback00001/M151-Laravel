@@ -6,9 +6,9 @@
     <h1>Alle Events</h1>
 
     @auth
-            <div class="main">
-                <a href="/create"><button class="eventbutton">Event erstellen</button></a>
-            </div>
+    <div class="main">
+        <a href="/create"><button class="eventbutton">Event erstellen</button></a>
+    </div>
     @endauth
     <ul>
         @foreach($events as $event)
