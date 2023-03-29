@@ -15,59 +15,59 @@ header {
     justify-content: space-between;
     padding: 10px;
     background-color: #97DEFF;
-  }
+}
 
-  .logo img {
+.logo img {
     width: 150px;
     height: 150px;
-  }
+}
 
-  .navbar {
+.navbar {
     display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
-  }
+}
 
-  .navbar li {
+.navbar li {
     margin: 0 10px;
-  }
+}
 
-  .navbar a {
+.navbar a {
     display: block;
     padding: 10px;
     color: #333;
     text-decoration: none;
     font-weight: bold;
-  }
+}
 
-  .main {
+.main {
     display: flex;
     align-items: center;
     flex-direction: row;
-  }
+}
 
-  .main a {
+.main a {
     margin-right: 10px;
     color: black;
     font-weight: bold;
-  }
+}
 
-  .buttonlogin {
+.buttonlogin {
     background-color: #2B3467;
     color: #fff;
-    border-radius: 25px; 
+    border-radius: 25px;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     width: 120px;
     height: 40px;
     cursor: pointer;
-  }
+}
 
-  .buttonlogin:hover{
-      scale: 1.05;
-  }
+.buttonlogin:hover {
+    scale: 1.05;
+}
 
 
 /* Event view */
@@ -76,17 +76,17 @@ header {
     display: flex;
     align-items: center;
     flex-direction: row;
-    
+
 }
 
-.choice{
+.choice {
     display: flex;
     align-items: center;
     margin-right: 20px;
     margin-left: 30px;
 }
 
-a{
+a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,7 +103,7 @@ div {
     flex-direction: column;
 }
 
-span{
+span {
     color: red;
 }
 
@@ -117,10 +117,13 @@ span{
 }
 
 
-input[type=text], [type=email], [type=password], [type=date]  {
+input[type=text],
+[type=email],
+[type=password],
+[type=date] {
     width: 300px;
-    border:1px solid #ccc;
-    padding:10px 15px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
     font-size: 15px;
     text-transform: none;
 }
@@ -128,8 +131,8 @@ input[type=text], [type=email], [type=password], [type=date]  {
 textarea {
     width: 300px;
     height: 100px;
-    border:1px solid #ccc;
-    padding:10px 15px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
     font-size: 15px;
     resize: none;
 }
@@ -147,23 +150,23 @@ button {
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     scale: 1.05;
 }
 
-.event-details{
+.event-details {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.event-details p{
+.event-details p {
     max-width: 450px;
     text-align: center;
     padding-bottom: 9px;
 }
 
-.success-msg{
+.success-msg {
     background-color: green;
     color: white;
 }
@@ -173,9 +176,9 @@ button:hover{
 .application {
     margin: 20px;
     padding: 20px;
-    background-color: #AEAEAE;
+    background-color: #E5B8F4;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,10 +189,10 @@ button:hover{
     list-style: none;
     padding: 0;
     text-align: center;
-    
+
 }
 
-.application a{
+.application a {
     text-decoration: none;
     text-align: center;
     width: 100px;
@@ -203,7 +206,7 @@ button:hover{
     cursor: pointer;
 }
 
-.application a:hover{
+.application a:hover {
     scale: 1.05;
 }
 
@@ -220,15 +223,15 @@ button:hover{
 }
 
 
-.events{
+.events {
     display: flex;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
     text-align: center;
     padding-top: 40px;
 }
 
-.events li{
+.events li {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -236,10 +239,10 @@ button:hover{
 }
 
 
-.eventbutton{
+.eventbutton {
     background-color: #006ed5;
     color: #fff;
-    border-radius: 25px; 
+    border-radius: 25px;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
